@@ -11,7 +11,7 @@ import UIKit
 class InspectionViewController: UIViewController {
     
     var ble: BLE?
-    var infoString: String!
+    var infoString: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,19 +23,22 @@ class InspectionViewController: UIViewController {
         
         var myStringArr = infoString.components(separatedBy: " ")
         
-        leftUS.text = myStringArr [0]
-        midUS.text = myStringArr [1]
-        rightUS.text = myStringArr [2]
-        leftBumper.text = myStringArr [3]
-        midBumper.text = myStringArr [4]
-        rightBumper.text = myStringArr [5]
-        leftIR.text = myStringArr [6]
-        midIR.text = myStringArr [7]
-        rightIR.text = myStringArr [8]
+        if(myStringArr.count > 1){
+            leftUS.text = myStringArr [0]
+            midUS.text = myStringArr [1]
+            rightUS.text = myStringArr [2]
+            leftBumper.text = myStringArr [3]
+            midBumper.text = myStringArr [4]
+            rightBumper.text = myStringArr [5]
+            leftIR.text = myStringArr [6]
+            midIR.text = myStringArr [7]
+            rightIR.text = myStringArr [8]
+        }
+        
         
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -83,15 +86,15 @@ class InspectionViewController: UIViewController {
     }
     
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
